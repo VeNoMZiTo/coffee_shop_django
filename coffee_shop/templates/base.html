@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+     
+    {% if user.is_authenticate %}
+        Hola,{{ user.username }}
+    {% else %}
+        <a href="{% url "user_login" %}">Login</a>
+    {% endif %}
+    <div class="container mx-auto px-4">
+        {% block content %}
+        {% endblock %}
+    </div>    
+</body>
+</html>

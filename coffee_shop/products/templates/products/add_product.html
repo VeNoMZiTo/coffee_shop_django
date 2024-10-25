@@ -1,0 +1,7 @@
+Aquí estará el form
+
+<form action="{% url "list_products" %}" method="get">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar Producto</button>
+</form>
